@@ -194,7 +194,7 @@ h1, h2, h3, h4, h5 {
     background-clip: padding-box;
     position: relative;
     box-shadow: 1px 1px 1px #ccc;
-    padding: 10px;
+    // padding: 10px;
     margin-bottom: 30px;
     min-height: 250px;
 }
@@ -206,8 +206,6 @@ h1, h2, h3, h4, h5 {
     right: 30px;
     bottom: 30px;
 }
-
-
 
 
 
@@ -310,4 +308,72 @@ h1, h2, h3, h4, h5 {
 	color: #555;
 	padding-top: 30px;
 	padding-bottom: 30px;
+}
+
+/* Flipping */
+.animations {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.flip-container {
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -ms-transition: all .3s ease;
+  transition: all .3s ease;
+  -webkit-perspective: 800px;
+  -moz-perspective: 800px;
+  -o-perspective: 800px;
+  perspective: 800px;
+}
+
+.case {
+	-webkit-transition: -webkit-transform 0.6s;
+	-moz-transition: -moz-transform 0.6s;
+	-o-transition: -o-transform 0.6s;
+	transition: transform 0.6s;
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-o-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+.case.flipped {
+  -webkit-transform: rotateY( 180deg);
+  -moz-transform: rotateY( 180deg);
+  -o-transform: rotateY( 180deg);
+  transform: rotateY( 180deg);
+}
+.case.unflipped {
+  -webkit-transform: rotateY( 180deg);
+  -moz-transform: rotateY( 180deg);
+  -o-transform: rotateY( 180deg);
+  transform: rotateY( 180deg);
+}
+
+.case .front,
+.case .back {
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: white;
+  
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+
+  padding: 10px;
+}
+
+.case .back {
+  width: 100%;
+  -webkit-transform: rotateY( 180deg);
+	-moz-transform: rotateY( 180deg);
+	-o-transform: rotateY( 180deg);
+	transform: rotateY( 180deg);
 }
