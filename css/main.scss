@@ -207,8 +207,40 @@ h1, h2, h3, h4, h5 {
     bottom: 30px;
 }
 
+/* CASE-TESTIMONIAL */
+.testimonialcard {
+	background-color: #fff;
+	padding: 20px;
+	margin-bottom: 20px;
 
+	position: relative !important;
+	overflow: hidden;
+}
 
+.testimonial {
+	font-weight: lighter;
+	margin-top: 20px;
+}
+.testimonial i {
+	color: #F7954F;
+	float: left;
+	padding-top: 5px;
+}
+.testimonial p {
+	padding-left: 25px;
+}
+.details {
+	text-align: right;
+}
+.caseimage {
+	position: inherit;
+}
+.caseimage i {
+	position: absolute;
+	color: #fff;
+	font-size: 100px;
+
+}
 .subline {
     width: 140px;
     height: 4px;
@@ -310,70 +342,93 @@ h1, h2, h3, h4, h5 {
 	padding-bottom: 30px;
 }
 
-/* Flipping */
-.animations {
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+/* IMAGE OVERLAY */
+.ImageWrapper {
+	display: block;
+    overflow: hidden;
+    position: relative;
+}
+.ImageOverlay {
+	background: none repeat scroll 0 0 rgba(0, 0, 0, 0.5);
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	display: block;
+	opacity: 0;
+}
+.ImageWrapper .ImageOverlay {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.5);
+    bottom: 0;
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -ms-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    width: 100%;
 }
 
-.flip-container {
-  -webkit-transition: all .3s ease;
-  -moz-transition: all .3s ease;
-  -ms-transition: all .3s ease;
-  transition: all .3s ease;
-  -webkit-perspective: 800px;
-  -moz-perspective: 800px;
-  -o-perspective: 800px;
-  perspective: 800px;
+.ImageWrapper .StyleH {
+	visibility: hidden;
+	opacity: 0;
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	top: 50%;
+	margin-top: -20px;
+	-webkit-transform: scale(0.2);
+	-moz-transform: scale(0.2);
+	-ms-transform: scale(0.2);
+	-o-transform: scale(0.2);
+	transform: scale(0.2);
+	-webkit-transition: all 0.3s ease 0s;
+	-moz-transition: all 0.3s ease 0s;
+	-ms-transition: all 0.3s ease 0s;
+	-o-transition: all 0.3s ease 0s;
+	transition: all 0.3s ease 0s;
 }
 
-.case {
-	-webkit-transition: -webkit-transform 0.6s;
-	-moz-transition: -moz-transform 0.6s;
-	-o-transition: -o-transform 0.6s;
-	transition: transform 0.6s;
-	-webkit-transform-style: preserve-3d;
-	-moz-transform-style: preserve-3d;
-	-o-transform-style: preserve-3d;
-	transform-style: preserve-3d;
+.WhiteRounded {
+    background-color: #ffffff;
+    border: medium none;
+    display: inline-block !important;
+    float: none !important;
+    font-size: 14px;
+    font-weight: normal;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 2px;
+    text-align: center;
+    width: 40px;
+    border-radius: 50%;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.5), inset 0 0 2px rgba(0, 0, 0, .1);
+}
+	.WhiteRounded > a {
+	    color: #222222;
+	    display: block;
+	    font-weight: normal;
+	}
+
+.ImageWrapper:hover .ImageOverlay {
+    opacity: 1;
 }
 
-.case.flipped {
-  -webkit-transform: rotateY( 180deg);
-  -moz-transform: rotateY( 180deg);
-  -o-transform: rotateY( 180deg);
-  transform: rotateY( 180deg);
-}
-.case.unflipped {
-  -webkit-transform: rotateY( 180deg);
-  -moz-transform: rotateY( 180deg);
-  -o-transform: rotateY( 180deg);
-  transform: rotateY( 180deg);
-}
-
-.case .front,
-.case .back {
-  display: block;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  background-color: white;
-  
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  -o-backface-visibility: hidden;
-  backface-visibility: hidden;
-
-  padding: 10px;
-}
-
-.case .back {
-  width: 100%;
-  -webkit-transform: rotateY( 180deg);
-	-moz-transform: rotateY( 180deg);
-	-o-transform: rotateY( 180deg);
-	transform: rotateY( 180deg);
+.ImageWrapper:hover .StyleH {
+    opacity: 1;
+    visibility: visible;
+	-webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
 }
